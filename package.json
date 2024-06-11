@@ -1,0 +1,26 @@
+{
+  "name": "park-me",
+  "version": "1.0.0",
+  "description": "",
+  "private" : true,
+  "scripts": {
+    "format": "prettier  \"{apps,libs}/**/*.{ts,tsx,js,json}\" --ignore-path .gitignore",
+    "format:check": "npm format --check",
+    "format:write": "npm format --write",
+    "tsc": "npm nx run-many -t tsc",
+    "lint": "npm nx run-many -t lint",
+    "build": "npm nx run-many -t build",
+    "validate": "npm format:write && npm tsc && npm lint && npm build",
+    "prepare": "husky install",
+    "cloc": "npx cloc --exclude-dir=node_modules,dist,build,npm.lock,package.json,generated.tsx,.next,.nx ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^2.3.2",
+    "typescript": "^5.4.3",
+    "husky": "^8.0.0",
+    "nx": "18.3.4"
+  }
+}
