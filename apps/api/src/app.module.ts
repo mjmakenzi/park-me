@@ -6,6 +6,7 @@ import { JwtModule } from '@nestjs/jwt';
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
+import { PrismaModule } from './common/prisma/prisma.module';
 
 // Todo: Move this to util lib.
 const MAX_AGE = 24 * 60 * 60;
@@ -26,6 +27,7 @@ const MAX_AGE = 24 * 60 * 60;
       //      numberScalarMode: 'integer',
       //   },
     }),
+    PrismaModule,
   ],
   controllers: [AppController],
   providers: [AppService],
